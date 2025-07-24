@@ -78,9 +78,9 @@ export default function Experience() {
                   index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'
                 }`}
               >
-                <div className="flex items-center justify-between mb-1">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-1">
                   <h3 className="font-semibold text-primary">{exp.area}</h3>
-                  <span className="text-xs font-medium bg-primary/20 text-primary px-2 py-1 rounded-full">
+                  <span className="text-xs font-medium bg-primary/20 text-primary px-3 py-1 rounded-full self-start sm:self-auto">
                     {exp.duration}
                   </span>
                 </div>

@@ -7,7 +7,7 @@ export default function Services() {
   const services = [
     {
       title: "Online Physiotherapy Consultation",
-      price: "₹500-800 per session",
+      price: "₹350",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
           <rect width="18" height="18" x="3" y="3" rx="2"></rect>
@@ -20,7 +20,7 @@ export default function Services() {
     },
     {
       title: "Home Visit Physiotherapy",
-      price: "₹800-1200 per visit", 
+      price: "₹1000", 
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-secondary">
           <path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"></path>
@@ -32,7 +32,7 @@ export default function Services() {
     },
     {
       title: "Neurological Rehabilitation",
-      price: "₹1000-1500 per session",
+      price: "₹1300",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent">
           <path d="M12 2v4"></path>
@@ -50,7 +50,7 @@ export default function Services() {
     },
     {
       title: "Orthopedic Physiotherapy",
-      price: "₹600-1000 per session",
+      price: "₹900",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
           <path d="M12 3v6l4-4-4-4"></path>
@@ -64,7 +64,7 @@ export default function Services() {
     },
     {
       title: "Cupping & Manual Therapy",
-      price: "₹700-1000 per session",
+      price: "₹900",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-secondary">
           <circle cx="12" cy="12" r="10"></circle>
@@ -76,7 +76,7 @@ export default function Services() {
     },
     {
       title: "Sports Injury Rehabilitation",
-      price: "₹800-1200 per session",
+      price: "₹1000",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent">
           <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
@@ -115,9 +115,9 @@ export default function Services() {
                   {service.icon}
                 </div>
                 <div className="flex-1">
-                  <div className="flex items-start justify-between mb-2">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
                     <h3 className="text-lg font-semibold">{service.title}</h3>
-                    <span className="text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded-full whitespace-nowrap">
+                    <span className="text-xs sm:text-sm font-bold text-primary bg-primary/10 px-3 py-1 rounded-full text-center">
                       {service.price}
                     </span>
                   </div>
