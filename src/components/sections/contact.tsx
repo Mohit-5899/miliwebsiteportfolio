@@ -139,7 +139,7 @@ export default function Contact() {
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-sm">Online Consultations (₹500-800)</span>
+                  <span className="text-sm">Online Consultations (₹350)</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-secondary rounded-full"></div>
@@ -200,7 +200,7 @@ export default function Contact() {
                   className="glass-card bg-transparent border border-input rounded-md px-3 py-2 text-sm w-full"
                 >
                   <option value="" disabled>Select Service Type</option>
-                  <option value="Online Consultation">Online Consultation (₹500-800)</option>
+                  <option value="Online Consultation">Online Consultation (₹350)</option>
                   <option value="Home Visit">Home Visit (₹800-1200)</option>
                   <option value="Neurological Rehab">Neurological Rehabilitation</option>
                   <option value="Orthopedic Treatment">Orthopedic Treatment</option>
