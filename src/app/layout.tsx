@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   description: 'Portfolio website of Dr. Mili Jain, a dedicated Physiotherapist specializing in Neurology',
   authors: [{ name: 'Dr. Mili Jain' }],
   keywords: ['physiotherapist', 'neurology', 'rehabilitation', 'healthcare', 'Gurgaon'],
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
   openGraph: {
     title: 'Dr. Mili Jain | Physiotherapist Portfolio',
     description: 'Portfolio website of Dr. Mili Jain, a dedicated Physiotherapist specializing in Neurology',
