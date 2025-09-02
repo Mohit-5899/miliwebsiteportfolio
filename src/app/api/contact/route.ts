@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { GoogleSheetsService } from '@/lib/google-sheets'
 
 export async function POST(request: Request) {
   try {
@@ -13,56 +14,33 @@ export async function POST(request: Request) {
       )
     }
 
-    // Create URL-encoded form data for Google Apps Script
-    const params = new URLSearchParams()
-    params.append('name', name)
-    params.append('email', email)
-    params.append('subject', subject)
-    params.append('message', message)
+    // Initialize Google Sheets service
+    const sheetsService = new GoogleSheetsService()
 
-    // Google Apps Script URL - Updated with new deployment
-    const scriptUrl = 'https://script.google.com/macros/s/AKfycbwvE78pVHgJk7z37Z1t8BIZUAdvNlHScQJct3VPqCWFhvfSrUa157HYF3MgmcK5thc/exec'
-
-    // Send to Google Apps Script
-    console.log('Sending to Google Apps Script:', scriptUrl)
-    console.log('Form data:', { name, email, subject, message })
+    // Append data to Google Sheets
+    console.log('Sending to Google Sheets:', { name, email, subject, message })
     
-    const response = await fetch(scriptUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: params.toString(),
+    const response = await sheetsService.appendContactFormData({
+      name,
+      email,
+      subject,
+      message
     })
 
-    console.log('Google Apps Script response status:', response.status)
-    
-    // Try to get the response text to see what Google Apps Script returned
-    let responseText = ''
-    try {
-      responseText = await response.text()
-      console.log('Google Apps Script response:', responseText)
-    } catch (textError) {
-      console.log('Could not read response text:', textError)
-    }
+    console.log('Google Sheets response:', response)
 
-    // Check if we got a successful response
-    if (response.ok || response.status === 200) {
-      return NextResponse.json(
-        { 
-          message: 'Form submitted successfully to Google Sheets',
-          googleResponse: responseText 
-        },
-        { status: 200 }
-      )
-    } else {
-      throw new Error(`Google Apps Script returned status ${response.status}: ${responseText}`)
-    }
+    return NextResponse.json(
+      { 
+        message: 'Form submitted successfully to Google Sheets',
+        sheetsResponse: response 
+      },
+      { status: 200 }
+    )
 
   } catch (error) {
-    console.error('Error sending email:', error)
+    console.error('Error submitting to Google Sheets:', error)
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { error: 'Failed to submit form to Google Sheets' },
       { status: 500 }
     )
   }
